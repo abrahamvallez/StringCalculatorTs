@@ -8,8 +8,7 @@ export const Add = (input: string): number => {
         return parseInt(input)
     } else if(input.startsWith('//')) {
         separatorRegex = new RegExp(input.substring(2, input.indexOf('\n')))
-        numbers = input.substring(input.indexOf('\n') + 1).split(separatorRegex)
-        return numbers.reduce((sum, currentNumber) => sum + parseInt(currentNumber), 0)
+        input = input.substring(input.indexOf('\n') + 1)
     }
 
     numbers = input.split(separatorRegex)
