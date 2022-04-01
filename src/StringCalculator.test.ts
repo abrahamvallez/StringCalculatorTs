@@ -9,11 +9,15 @@ describe('String Calculator', () => {
         expect(Add(input)).toBe(expectedResult)
     })
 
-    it.each([["1,2", 3],["1,1", 2],["4,5", 9]])('result should be the sum of two numbers', (input:string , expectedResult: number) => {
+    it.each([["1,2", 3], ["1,1", 2], ["4,5", 9]])('result should be the sum of two numbers', (input:string , expectedResult: number) => {
         expect(Add(input)).toBe(expectedResult)
     })
 
-    it('should sum all numbers in the input', () => {
-        expect(Add("1,2,3")).toBe(6)
+    it.each([['1,2,3', 6], ['4,5,6', 15], ['10,15,20', 45] ])('should sum all numbers in the input', (input:string , expectedResult: number) => {
+        expect(Add(input)).toBe(expectedResult)
     })
+
+    it.each([['1\n2,3', 6] ])('should sum all numbers in the input when \n as separator', (input:string , expectedResult: number) => {
+        expect(Add(input)).toBe(expectedResult)
+    }
 })

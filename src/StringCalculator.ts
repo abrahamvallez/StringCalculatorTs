@@ -6,5 +6,5 @@ export const Add = (input: string): number => {
     }
 
     const numbers = input.split(',')
-    return parseInt(numbers[0]) + parseInt(numbers[1])
+    return numbers.reduce((sum, currentNumber) => sum + parseInt(currentNumber), 0)
 }
