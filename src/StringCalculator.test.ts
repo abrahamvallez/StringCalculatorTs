@@ -12,4 +12,8 @@ describe('String Calculator', () => {
     it.each([["1,2", 3],["1,1", 2],["4,5", 9]])('result should be the sum of two numbers', (input:string , expectedResult: number) => {
         expect(Add(input)).toBe(expectedResult)
     })
+
+    it('should sum all numbers in the input', () => {
+        expect(Add("1,2,3")).toBe(6)
+    })
 })
