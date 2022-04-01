@@ -25,4 +25,8 @@ describe('String Calculator', () => {
     it.each([['//;\n1;2', 6], ['//;\n4;5;6', 15], ['//()\n10()15()20', 45]])('should allow specifying custom separators', () => {
         expect(Add('//;\n1;2')).toBe(3)
     })
+
+    it('should not allow negative numbers', () => {
+        expect(() => Add('-1')).toThrowError('negatives not allowed: -1')
+    })
 })
