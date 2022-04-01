@@ -1,2 +1,2 @@
-# StringCalculatorTs
-String Calculator Kata in Typescript
+# String Calculator in Ts
+
