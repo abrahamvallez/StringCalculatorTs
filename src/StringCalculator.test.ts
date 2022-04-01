@@ -26,7 +26,7 @@ describe('String Calculator', () => {
         expect(Add('//;\n1;2')).toBe(3)
     })
 
-    it('should not allow negative numbers', () => {
-        expect(() => Add('-1')).toThrowError('negatives not allowed: -1')
+    it.each([['-1'], ['1,-2,3'], ['-4\n5,-6'], ['//;\n4;5;-6']])('should not allow negative numbers', (input: string) => {
+        expect(() => Add(input)).toThrowError('negatives not allowed: ' + input)
     })
 })
