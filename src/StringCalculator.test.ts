@@ -19,5 +19,5 @@ describe('String Calculator', () => {
 
     it.each([['1\n2,3', 6] ])('should sum all numbers in the input when \n as separator', (input:string , expectedResult: number) => {
         expect(Add(input)).toBe(expectedResult)
-    }
+    })
 })
