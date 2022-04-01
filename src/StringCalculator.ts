@@ -1,11 +1,7 @@
-export const Add = (input: string) => {
-    if (input == '1') { 
-        return 1 
-    } else if (input == '2') { 
-        return 2 
-    } else if (input == '3') {
-        return 3 
+export const Add = (input: string): number => {
+    if (input === '') {
+        return 0
     }
 
-    return 0
+    return parseInt(input)
 }

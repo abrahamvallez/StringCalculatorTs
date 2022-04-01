@@ -1,19 +1,11 @@
-import {Add} from './StringCalculator';
+import {Add} from './StringCalculator'
 
 describe('String Calculator', () => {
     it('result should be 0 when empty entry', () => {
         expect(Add('')).toBe(0)
     })
 
-    it('result should be 1 when input is 1', () => {
-        expect(Add('1')).toBe(1)
-    })
-
-    it('result should be 2 when input is 2', () => {
-        expect(Add('2')).toBe(2)
-    })
-
-    it('result should be 3 when input is 3', () => {
-        expect(Add('3')).toBe(3)
+    it.each([['1', 1], ['2', 2], ['3', 3]])('result should be the same number when input is only one number', (input: string, expectedResult) => {
+        expect(Add(input)).toBe(expectedResult)
     })
 })
