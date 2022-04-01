@@ -1,6 +1,6 @@
 export const Add = (input: string): number => {
     let negatives:string[] = []
-    let numbers = getNumberFromInput(input)
+    let numbers = getNumbersFromInput(input)
 
     negatives = numbers.filter(n => parseInt(n) < 0)
     if((numbers.filter(n => parseInt(n) < 0)).length > 0) {
@@ -10,7 +10,7 @@ export const Add = (input: string): number => {
     return numbers.reduce((sum, currentNumber) => sum + parseInt(currentNumber), 0)
 }
 
-const getNumberFromInput = (input: string): string[] => {
+const getNumbersFromInput = (input: string): string[] => {
     let numbers: string[] = []
 
     if(input === '') {
