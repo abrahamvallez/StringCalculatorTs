@@ -12,4 +12,8 @@ describe('String Calculator', () => {
     it('result should be 2 when input is 2', () => {
         expect(Add('2')).toBe(2)
     })
+
+    it('result should be 3 when input is 3', () => {
+        expect(Add('3')).toBe(3)
+    })
 })
