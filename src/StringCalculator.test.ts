@@ -5,11 +5,11 @@ describe('String Calculator', () => {
         expect(Add('')).toBe(0)
     })
 
-    it.each([['1', 1], ['2', 2], ['3', 3]])('result should be the same number when input is only one number', (input: string, expectedResult) => {
+    it.each([['1', 1], ['2', 2], ['3', 3]])('result should be the same number when input is only one number', (input: string, expectedResult: number) => {
         expect(Add(input)).toBe(expectedResult)
     })
 
-    it('result should be the sum when inputs are two numbers', () => {
-        expect(Add('1,2')).toBe(3)
+    it.each([["1,2", 3],["1,1", 2]])('result should be the sum of two numbers', (input:string , expectedResult: number) => {
+        expect(Add(input)).toBe(expectedResult)
     })
 })
