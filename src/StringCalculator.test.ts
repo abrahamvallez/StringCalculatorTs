@@ -9,7 +9,7 @@ describe('String Calculator', () => {
         expect(Add(input)).toBe(expectedResult)
     })
 
-    it.each([["1,2", 3],["1,1", 2]])('result should be the sum of two numbers', (input:string , expectedResult: number) => {
+    it.each([["1,2", 3],["1,1", 2],["4,5", 9]])('result should be the sum of two numbers', (input:string , expectedResult: number) => {
         expect(Add(input)).toBe(expectedResult)
     })
 })
