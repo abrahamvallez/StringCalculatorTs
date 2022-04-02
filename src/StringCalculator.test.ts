@@ -44,8 +44,9 @@ describe('String Calculator', () => {
         expect(Add(input)).toBe(expectedResult)
         })
 
-        it('when are two or more separators', () => {
-            expect(Add('//[***][---]\n1***2---3')).toBe(6)
+        it.each([['//[*][%]\n1*2%3', 6], ['//[-][%]\n4-5%6', 15], ['//[,][%]\n10,15%20', 45]])
+        ('when are two or more separators', (input:string , expectedResult: number) => {
+            expect(Add(input)).toBe(expectedResult)
         })
     })
 
