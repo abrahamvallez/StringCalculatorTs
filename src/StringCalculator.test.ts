@@ -34,13 +34,14 @@ describe('String Calculator', () => {
             expect(Add(input)).toBe(expectedResult)
         })
 
-        it.each([['//;\n1;2', 6], ['//;\n4;5;6', 15], ['//()\n10()15()20', 45]])
+        it.each([['//;\n1;2', 6], ['//;\n4;5;6', 15], ['//*\n10*15*20', 45]])
         ('when separator is custom', () => {
         expect(Add('//;\n1;2')).toBe(3)
         })
 
-        it('when separator is custom and has more than one character', () => {
-        expect(Add('//[***]\n1***2***3')).toBe(6)
+        it.each([['//[***]\n1***2***3', 6], ['//[---]\n4---5---6', 15], ['//[,,,]\n10,,,15,,,20', 45]])
+        ('when separator is custom and has more than one character', (input:string , expectedResult: number) => {
+        expect(Add(input)).toBe(expectedResult)
         })
     })
 
