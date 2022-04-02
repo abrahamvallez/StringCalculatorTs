@@ -7,7 +7,7 @@ export const Add = (input: string): number => {
         throw new Error('negatives not allowed: ' + negatives.join(','))
     }
 
-    return numbers.reduce((sum, currentNumber) => sum + parseInt(currentNumber), 0)
+    return numbers.filter(n => parseInt(n) <= 1000).reduce((sum, currentNumber) => sum + parseInt(currentNumber), 0)
 }
 
 const getNumbersFromInput = (input: string): string[] => {
