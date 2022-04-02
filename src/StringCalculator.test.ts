@@ -43,6 +43,10 @@ describe('String Calculator', () => {
         ('when separator is custom and has more than one character', (input:string , expectedResult: number) => {
         expect(Add(input)).toBe(expectedResult)
         })
+
+        it('when are two or more separators', () => {
+            expect(Add('//[***][---]\n1***2---3')).toBe(6)
+        })
     })
 
     it.each([['1001,2', 2], ['1500,2,4', 6], ['1300,1003,2', 2]])
