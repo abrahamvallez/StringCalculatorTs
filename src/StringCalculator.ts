@@ -27,7 +27,8 @@ const getNumbersFromInput = (input: string): string[] => {
 }
 
 const getNumbersWithCustomSeparator = (input: string): string[] => {
-    const separatorRegex: RegExp = new RegExp(input.substring(2, input.indexOf('\n')))
+    const customSeparator = input.substring(2, input.indexOf('\n'))
+    const separatorRegex = new RegExp(customSeparator.replace(/\]\[/, ']|['))
     return input.substring(input.indexOf('\n') + 1).split(separatorRegex)
 }
 
